@@ -10,10 +10,12 @@ from flask import (
 
 from flask_sqlalchemy import SQLAlchemy
 
+
 app = Flask(__name__)
 
 # @TODO: Setup your database here
 app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get("DATABASE_URL", "") or "sqlite:///db/pets.sqlite"
+
 db = SQLAlchemy(app)
 
 from .models import Pet
